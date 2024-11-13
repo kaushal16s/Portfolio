@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+html{
+  scroll-behavior: smooth !important;
+}
+@layer base {
+  body {
+    @apply text-white tracking-wide;
+    background-color: #0f172a; /* Equivalent to Tailwind's bg-slate-950 */
+    position: relative;
+    min-height: 100vh;
+    /* overflow: hidden; */
+
+
+  }
+  body::before {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    top: 10%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+    z-index: -1; /* Ensures it's behind other content */
+  }
+  
+  /* Right radial gradient circle */
+  body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -20%;
+    top: -50%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+    z-index: -1;
+  }
+  .navbar-text {
+    display: flex;
+    align-items: center;
+    color: yellow;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 0.8;
+    transform: rotate(-8deg) skew(-15deg); /* Skewed and rotated effect */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for pop */
+}
+
+/* Styling for span elements */
+.navbar-text span {
+    font-size: 45px; /* Smaller size for any inner span */
+}
+  /* Ensure content is above the grid */
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-semibold;
+  }
+  h1{
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  h2{
+    @apply text-3xl sm:text-4xl;
+  }
+  li{
+    @apply cursor-pointer;
+  }
+  button{
+    @apply shadow-xl shadow-gray-300 rounded-xl uppercase bg-gradient-to-r from-[#868f96] to-[#596164] text-black;
+  }
+}
